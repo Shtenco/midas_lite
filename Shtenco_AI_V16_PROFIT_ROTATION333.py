@@ -6,7 +6,7 @@
 ║  💡 Philosophy: George Soros, Paul Tudor Jones, Ray Dalio, Jesse Livermore   ║
 ║  🔄 Smart Position Rotation: Close Weak, Open Strong                         ║
 ║  📊 Equity Chart Visualization for Backtest Analysis                         ║
-║  🧠 Claude Sonnet 4 API with Concise System Prompt                           ║
+║  🧠 Local Ollama LLM + Optional Finetune                                     ║
 ║  💾 SQLite Memory Database + Episodic Memory                                 ║
 ║  🔄 Multi-Scenario Branching + Monte Carlo Tree Search                       ║
 ║  📈 Historical Pattern Recognition + Meta-Learning                           ║
@@ -20,11 +20,11 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 """
 
-import requests
 import json
 import MetaTrader5 as mt5
 import pandas as pd
 import time
+import subprocess
 from datetime import datetime, timedelta
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,15 +33,19 @@ import sqlite3
 import hashlib
 from typing import Dict, List, Tuple, Optional
 
+try:
+    import ollama
+except ImportError:
+    ollama = None
+
 # ═══════════════════════════════════════════════════════════════════════════════
 #                          КОНФИГУРАЦИЯ
 # ═══════════════════════════════════════════════════════════════════════════════
 
-# Claude API
-CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
-CLAUDE_API_KEY = "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"  # ЗАМЕНИ НА СВОЙ КЛЮЧ!
-CLAUDE_API_VERSION = "2023-06-01"
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+# Local LLM (Ollama)
+MODEL_NAME = "koshtenco/shtencoaitrader-3b-ultra-analyst-v3"
+BASE_MODEL = "llama3.2:3b"
+FINETUNE_EPOCHS = 3
 
 # Trading
 SYMBOLS = ["EURUSD", "GBPUSD", "USDCHF", "USDCAD", "AUDUSD", "NZDUSD", "EURGBP", "AUDCHF"]
@@ -598,50 +602,51 @@ def build_agi_prompt(all_data, slot_time, similar_situations):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-#                          CLAUDE API
+#                          OLLAMA LLM
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def call_claude_api(prompt: str) -> Dict:
-    """Вызов Claude API с обработкой ответа"""
-    headers = {
-        "Content-Type": "application/json",
-        "x-api-key": CLAUDE_API_KEY,
-        "anthropic-version": CLAUDE_API_VERSION
-    }
-    
-    payload = {
-        "model": CLAUDE_MODEL,
-        "max_tokens": 4000,
-        "messages": [
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ]
-    }
-    
+def finetune_with_ollama(dataset_path: str = "dataset/finetune_data.jsonl") -> bool:
+    """Быстрый файнтюн локальной модели через Ollama Modelfile."""
     try:
-        response = requests.post(CLAUDE_API_URL, headers=headers, json=payload, timeout=60)
-        response.raise_for_status()
-        data = response.json()
-        
-        if 'content' in data and len(data['content']) > 0:
-            text = data['content'][0]['text']
-            
-            # Парсинг JSON из ответа
-            import re
-            json_match = re.search(r'\{[\s\S]*\}', text)
-            if json_match:
-                try:
-                    return json.loads(json_match.group())
-                except json.JSONDecodeError:
-                    print("⚠️ Не удалось распарсить JSON")
-                    return {}
-        
-        return {}
-        
+        subprocess.run(["ollama", "--version"], check=True, capture_output=True)
+        with open("Modelfile_finetune", "w", encoding="utf-8") as f:
+            f.write(f"FROM {BASE_MODEL}\n")
+            f.write(f'PARAMETER num_ctx 4096\nPARAMETER temperature 0.2\n')
+            f.write(f'SYSTEM """Ты — AI трейдер. Отвечай только JSON в нужном формате."""\n')
+            if dataset_path:
+                f.write(f'ADAPTER "{dataset_path}"\n')
+
+        subprocess.run(["ollama", "create", MODEL_NAME, "-f", "Modelfile_finetune"], check=True)
+        print(f"✅ Файнтюн завершён. Локальная модель готова: {MODEL_NAME}")
+        return True
     except Exception as e:
-        print(f"❌ Ошибка вызова API: {e}")
+        print(f"⚠️ Не удалось выполнить файнтюн через Ollama: {e}")
+        return False
+
+def call_local_llm(prompt: str) -> Dict:
+    """Вызов локальной LLM (Ollama) с обработкой JSON-ответа."""
+    if not ollama:
+        print("❌ Модуль ollama не установлен. Выполни: pip install ollama")
+        return {}
+
+    try:
+        resp = ollama.generate(
+            model=MODEL_NAME,
+            prompt=prompt,
+            options={"temperature": 0.2}
+        )
+        text = resp.get("response", "") if isinstance(resp, dict) else ""
+
+        import re
+        json_match = re.search(r'\{[\s\S]*\}', text)
+        if json_match:
+            try:
+                return json.loads(json_match.group())
+            except json.JSONDecodeError:
+                print("⚠️ Не удалось распарсить JSON из ответа LLM")
+        return {}
+    except Exception as e:
+        print(f"❌ Ошибка вызова Ollama: {e}")
         return {}
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -831,9 +836,9 @@ def run_simulation():
         # Строим промпт
         prompt = build_agi_prompt(all_data_global, slot_time, similar)
         
-        # Вызываем Claude
-        print("  🤖 Запрос к Claude API...")
-        decisions_data = call_claude_api(prompt)
+        # Вызываем локальную LLM
+        print(f"  🤖 Запрос к локальной LLM ({MODEL_NAME})...")
+        decisions_data = call_local_llm(prompt)
         
         if not decisions_data or 'portfolio_decisions' not in decisions_data:
             print("  ⚠ Нет решений от API")
