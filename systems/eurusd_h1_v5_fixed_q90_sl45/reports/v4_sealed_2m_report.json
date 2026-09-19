@@ -1,0 +1,124 @@
+{
+  "version": "PriceEquation EURUSD H1 V4 Specialist23 - sealed last 2 calendar months",
+  "target_hour": 23,
+  "transition": "23:00 -> 00:00, strict +1h only",
+  "data_start": "2000-01-03 00:00:00",
+  "data_end": "2026-07-31 23:00:00",
+  "sealed_oos_start": "2026-06-01 00:00:00",
+  "sealed_oos_end": "2026-07-31 23:00:00",
+  "development_rows_hour23": 5946,
+  "train_rows": 4756,
+  "validation_rows": 1190,
+  "sealed_oos_rows": 36,
+  "train_start": "2000-01-17 23:00:00",
+  "train_end": "2020-08-25 23:00:00",
+  "validation_start": "2020-08-26 23:00:00",
+  "validation_end": "2026-05-28 23:00:00",
+  "validation_candidates": [
+    {
+      "quantile": 0.7,
+      "threshold": 0.22586372357617832,
+      "n": 357,
+      "accuracy": 0.7142857142857143,
+      "gross_mean_pips": 1.15630252100844,
+      "gross_sum_pips": 412.80000000001314
+    },
+    {
+      "quantile": 0.8,
+      "threshold": 0.2650612387416928,
+      "n": 238,
+      "accuracy": 0.7184873949579832,
+      "gross_mean_pips": 1.11596638655466,
+      "gross_sum_pips": 265.6000000000091
+    },
+    {
+      "quantile": 0.9,
+      "threshold": 0.31034345498935195,
+      "n": 119,
+      "accuracy": 0.773109243697479,
+      "gross_mean_pips": 1.8394957983192872,
+      "gross_sum_pips": 218.89999999999517
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.3402128085209176,
+      "n": 60,
+      "accuracy": 0.7666666666666667,
+      "gross_mean_pips": 1.7616666666666243,
+      "gross_sum_pips": 105.69999999999746
+    }
+  ],
+  "validation_choice": {
+    "quantile": 0.9,
+    "threshold": 0.31034345498935195,
+    "n": 119,
+    "accuracy": 0.773109243697479,
+    "gross_mean_pips": 1.8394957983192872,
+    "gross_sum_pips": 218.89999999999517
+  },
+  "sealed_oos_all_accuracy": 0.4722222222222222,
+  "sealed_oos_auc": 0.6126984126984127,
+  "sealed_oos_selected_signals": 4,
+  "sealed_oos_signal_rate": 0.1111111111111111,
+  "sealed_oos_selected_correct": 3,
+  "sealed_oos_selected_accuracy": 0.75,
+  "sealed_oos_selected_accuracy_wilson95": [
+    0.30064184258240184,
+    0.9544127391902995
+  ],
+  "sealed_oos_gross_mean_pips": -0.37499999999968114,
+  "sealed_oos_gross_sum_pips": -1.4999999999987246,
+  "sealed_oos_mean_abs_move_pips_selected": 2.975000000001171,
+  "cost_sensitivity": [
+    {
+      "all_in_cost_pips": 0.2,
+      "net_mean_pips": -0.5749999999996811,
+      "net_total_pips": -2.2999999999987244
+    },
+    {
+      "all_in_cost_pips": 0.5,
+      "net_mean_pips": -0.8749999999996811,
+      "net_total_pips": -3.4999999999987246
+    },
+    {
+      "all_in_cost_pips": 0.8,
+      "net_mean_pips": -1.1749999999996812,
+      "net_total_pips": -4.699999999998725
+    },
+    {
+      "all_in_cost_pips": 1.0,
+      "net_mean_pips": -1.3749999999996811,
+      "net_total_pips": -5.499999999998725
+    },
+    {
+      "all_in_cost_pips": 1.2,
+      "net_mean_pips": -1.574999999999681,
+      "net_total_pips": -6.299999999998724
+    },
+    {
+      "all_in_cost_pips": 1.5,
+      "net_mean_pips": -1.8749999999996811,
+      "net_total_pips": -7.499999999998725
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-06",
+      "candidate_bars": 18,
+      "all_accuracy": 0.3888888888888889,
+      "selected_signals": 0,
+      "selected_accuracy": null,
+      "selected_gross_mean_pips": null,
+      "selected_gross_sum_pips": null
+    },
+    {
+      "month": "2026-07",
+      "candidate_bars": 18,
+      "all_accuracy": 0.5555555555555556,
+      "selected_signals": 4,
+      "selected_accuracy": 0.75,
+      "selected_gross_mean_pips": -0.37499999999968114,
+      "selected_gross_sum_pips": -1.4999999999987246
+    }
+  ]
+}

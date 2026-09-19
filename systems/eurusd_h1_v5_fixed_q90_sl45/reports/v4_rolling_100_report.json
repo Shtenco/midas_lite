@@ -1,0 +1,709 @@
+{
+  "version": "V4 Specialist23 rolling pseudo-OOS 100 x 2 months",
+  "window_range": {
+    "first": "2009-12-01",
+    "last_start": "2026-06-01",
+    "last_end_exclusive": "2026-08-01"
+  },
+  "adaptive": {
+    "windows": 100,
+    "windows_with_signals": 93,
+    "total_candidate_bars": 3595,
+    "total_signals": 430,
+    "pooled_accuracy": 0.6581395348837209,
+    "wilson95": [
+      0.6120833070016063,
+      0.7013952627268081
+    ],
+    "correct": 283,
+    "wrong": 147,
+    "gross_mean_pips": 2.3211627906976604,
+    "gross_median_pips": 1.500000000000945,
+    "gross_total_pips": 998.099999999994,
+    "median_window_accuracy": 0.6666666666666666,
+    "q25_window_accuracy": 0.5,
+    "q75_window_accuracy": 1.0,
+    "median_window_expectancy": 1.4999999999995572,
+    "q25_window_expectancy": -0.3333333333332966,
+    "q75_window_expectancy": 3.2999999999994145,
+    "profitable_windows_gross_fraction": 0.7204301075268817,
+    "positive_expectancy_windows_fraction": 0.7204301075268817,
+    "windows_accuracy_ge_60": 0.6344086021505376,
+    "windows_accuracy_ge_70": 0.44086021505376344,
+    "gross_max_drawdown_pips": -84.00000000000183,
+    "mean_recorded_spread_pips": 1.0395348837209302,
+    "after_recorded_spread_mean_pips": 1.2816279069767302,
+    "after_recorded_spread_total_pips": 551.099999999994,
+    "after_recorded_spread_maxdd_pips": -100.00000000000186,
+    "validation_q_counts": {
+      "0.7": 10,
+      "0.8": 11,
+      "0.9": 23,
+      "0.95": 56
+    },
+    "cost_sensitivity": [
+      {
+        "cost_pips": 0,
+        "mean_pips": 2.3211627906976604,
+        "total_pips": 998.099999999994,
+        "profitable_windows_fraction": 0.7204301075268817,
+        "maxdd_pips": -84.00000000000183
+      },
+      {
+        "cost_pips": 0.2,
+        "mean_pips": 2.1211627906976607,
+        "total_pips": 912.099999999994,
+        "profitable_windows_fraction": 0.6989247311827957,
+        "maxdd_pips": -85.60000000000187
+      },
+      {
+        "cost_pips": 0.5,
+        "mean_pips": 1.8211627906976602,
+        "total_pips": 783.0999999999939,
+        "profitable_windows_fraction": 0.6559139784946236,
+        "maxdd_pips": -88.00000000000183
+      },
+      {
+        "cost_pips": 0.8,
+        "mean_pips": 1.52116279069766,
+        "total_pips": 654.0999999999938,
+        "profitable_windows_fraction": 0.6451612903225806,
+        "maxdd_pips": -90.40000000000187
+      },
+      {
+        "cost_pips": 1.0,
+        "mean_pips": 1.3211627906976604,
+        "total_pips": 568.099999999994,
+        "profitable_windows_fraction": 0.5913978494623656,
+        "maxdd_pips": -92.00000000000188
+      },
+      {
+        "cost_pips": 1.2,
+        "mean_pips": 1.1211627906976607,
+        "total_pips": 482.09999999999405,
+        "profitable_windows_fraction": 0.5806451612903226,
+        "maxdd_pips": -93.60000000000187
+      },
+      {
+        "cost_pips": 1.5,
+        "mean_pips": 0.8211627906976604,
+        "total_pips": 353.099999999994,
+        "profitable_windows_fraction": 0.4946236559139785,
+        "maxdd_pips": -126.19999999999277
+      }
+    ],
+    "eras_20_windows": [
+      {
+        "windows": "1-20",
+        "start": "2009-12-01 00:00:00",
+        "end": "2013-04-01 00:00:00",
+        "signals": 103,
+        "accuracy": 0.5825242718446602,
+        "gross_mean_pips": 4.786407766990172,
+        "gross_total_pips": 492.9999999999877,
+        "profitable_window_fraction": 0.631578947368421
+      },
+      {
+        "windows": "21-40",
+        "start": "2013-04-01 00:00:00",
+        "end": "2016-08-01 00:00:00",
+        "signals": 121,
+        "accuracy": 0.6611570247933884,
+        "gross_mean_pips": 2.5950413223140205,
+        "gross_total_pips": 313.9999999999965,
+        "profitable_window_fraction": 0.8823529411764706
+      },
+      {
+        "windows": "41-60",
+        "start": "2016-08-01 00:00:00",
+        "end": "2019-12-01 00:00:00",
+        "signals": 58,
+        "accuracy": 0.5862068965517241,
+        "gross_mean_pips": 0.4103448275861767,
+        "gross_total_pips": 23.79999999999825,
+        "profitable_window_fraction": 0.631578947368421
+      },
+      {
+        "windows": "61-80",
+        "start": "2019-12-01 00:00:00",
+        "end": "2023-04-01 00:00:00",
+        "signals": 65,
+        "accuracy": 0.7230769230769231,
+        "gross_mean_pips": 1.4846153846155288,
+        "gross_total_pips": 96.50000000000936,
+        "profitable_window_fraction": 0.6842105263157895
+      },
+      {
+        "windows": "81-100",
+        "start": "2023-04-01 00:00:00",
+        "end": "2026-08-01 00:00:00",
+        "signals": 83,
+        "accuracy": 0.7469879518072289,
+        "gross_mean_pips": 0.8530120481927949,
+        "gross_total_pips": 70.80000000000197,
+        "profitable_window_fraction": 0.7894736842105263
+      }
+    ],
+    "worst_10": [
+      {
+        "window_id": 4,
+        "window_start": "2010-06-01 00:00:00",
+        "signals": 6,
+        "selected_accuracy": 0.1666666666666666,
+        "gross_mean_pips": -8.000000000000231,
+        "gross_sum_pips": -48.000000000001386,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 83,
+        "window_start": "2023-08-01 00:00:00",
+        "signals": 4,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -7.325000000000247,
+        "gross_sum_pips": -29.30000000000099,
+        "validation_quantile": 0.95
+      },
+      {
+        "window_id": 5,
+        "window_start": "2010-08-01 00:00:00",
+        "signals": 1,
+        "selected_accuracy": 0.0,
+        "gross_mean_pips": -17.000000000000348,
+        "gross_sum_pips": -17.000000000000348,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 9,
+        "window_start": "2011-04-01 00:00:00",
+        "signals": 10,
+        "selected_accuracy": 0.4,
+        "gross_mean_pips": -1.7000000000000348,
+        "gross_sum_pips": -17.000000000000348,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 13,
+        "window_start": "2011-12-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -7.000000000000339,
+        "gross_sum_pips": -14.00000000000068,
+        "validation_quantile": 0.95
+      },
+      {
+        "window_id": 29,
+        "window_start": "2014-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -7.000000000000339,
+        "gross_sum_pips": -14.00000000000068,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 56,
+        "window_start": "2019-02-01 00:00:00",
+        "signals": 9,
+        "selected_accuracy": 0.6666666666666666,
+        "gross_mean_pips": -1.3888888888888593,
+        "gross_sum_pips": -12.499999999999734,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 17,
+        "window_start": "2012-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.0,
+        "gross_mean_pips": -6.00000000000156,
+        "gross_sum_pips": -12.00000000000312,
+        "validation_quantile": 0.95
+      },
+      {
+        "window_id": 43,
+        "window_start": "2016-12-01 00:00:00",
+        "signals": 4,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -2.3250000000013538,
+        "gross_sum_pips": -9.300000000005417,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 59,
+        "window_start": "2019-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -4.549999999999832,
+        "gross_sum_pips": -9.099999999999664,
+        "validation_quantile": 0.95
+      }
+    ],
+    "best_10": [
+      {
+        "window_id": 7,
+        "window_start": "2010-12-01 00:00:00",
+        "signals": 12,
+        "selected_accuracy": 0.75,
+        "gross_mean_pips": 11.083333333333224,
+        "gross_sum_pips": 132.9999999999987,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 2,
+        "window_start": "2010-02-01 00:00:00",
+        "signals": 16,
+        "selected_accuracy": 0.625,
+        "gross_mean_pips": 7.687500000000124,
+        "gross_sum_pips": 123.000000000002,
+        "validation_quantile": 0.7
+      },
+      {
+        "window_id": 35,
+        "window_start": "2015-08-01 00:00:00",
+        "signals": 11,
+        "selected_accuracy": 0.5454545454545454,
+        "gross_mean_pips": 7.909090909091048,
+        "gross_sum_pips": 87.00000000000152,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 11,
+        "window_start": "2011-08-01 00:00:00",
+        "signals": 6,
+        "selected_accuracy": 0.3333333333333333,
+        "gross_mean_pips": 13.999999999999568,
+        "gross_sum_pips": 83.9999999999974,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 10,
+        "window_start": "2011-06-01 00:00:00",
+        "signals": 14,
+        "selected_accuracy": 0.6428571428571429,
+        "gross_mean_pips": 4.857142857143274,
+        "gross_sum_pips": 68.00000000000584,
+        "validation_quantile": 0.7
+      },
+      {
+        "window_id": 8,
+        "window_start": "2011-02-01 00:00:00",
+        "signals": 3,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 19.66666666666598,
+        "gross_sum_pips": 58.99999999999794,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 30,
+        "window_start": "2014-10-01 00:00:00",
+        "signals": 10,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 5.599999999999828,
+        "gross_sum_pips": 55.99999999999828,
+        "validation_quantile": 0.7
+      },
+      {
+        "window_id": 38,
+        "window_start": "2016-02-01 00:00:00",
+        "signals": 4,
+        "selected_accuracy": 0.75,
+        "gross_mean_pips": 10.250000000000536,
+        "gross_sum_pips": 41.00000000000215,
+        "validation_quantile": 0.8
+      },
+      {
+        "window_id": 6,
+        "window_start": "2010-10-01 00:00:00",
+        "signals": 5,
+        "selected_accuracy": 0.6,
+        "gross_mean_pips": 7.600000000000051,
+        "gross_sum_pips": 38.000000000000256,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 3,
+        "window_start": "2010-04-01 00:00:00",
+        "signals": 7,
+        "selected_accuracy": 0.7142857142857143,
+        "gross_mean_pips": 4.999999999999766,
+        "gross_sum_pips": 34.999999999998366,
+        "validation_quantile": 0.8
+      }
+    ],
+    "first80": {
+      "signals": 347,
+      "accuracy": 0.6368876080691642,
+      "gross_mean_pips": 2.672334293948104,
+      "gross_total_pips": 927.299999999992
+    },
+    "last20": {
+      "signals": 83,
+      "accuracy": 0.7469879518072289,
+      "gross_mean_pips": 0.8530120481927949,
+      "gross_total_pips": 70.80000000000197
+    },
+    "window_block_bootstrap_20000": {
+      "accuracy_95ci": [
+        0.6137440758293838,
+        0.7028205171321752
+      ],
+      "gross_mean_95ci": [
+        1.3133392965564374,
+        3.3272345752569565
+      ],
+      "net_mean_cost1_95ci": [
+        0.3133392965564374,
+        2.3272345752569565
+      ],
+      "p_gross_mean_le_0": 0.0,
+      "p_net_cost1_mean_le_0": 0.00375
+    }
+  },
+  "fixed_q90": {
+    "windows": 100,
+    "windows_with_signals": 96,
+    "total_candidate_bars": 3595,
+    "total_signals": 415,
+    "pooled_accuracy": 0.6867469879518072,
+    "wilson95": [
+      0.6405821538736284,
+      0.7294862735366473
+    ],
+    "correct": 285,
+    "wrong": 130,
+    "gross_mean_pips": 1.6079518072288692,
+    "gross_median_pips": 1.500000000000945,
+    "gross_total_pips": 667.2999999999807,
+    "median_window_accuracy": 0.6666666666666666,
+    "q25_window_accuracy": 0.5,
+    "q75_window_accuracy": 1.0,
+    "median_window_expectancy": 1.555000000000047,
+    "q25_window_expectancy": -0.1687499999999027,
+    "q75_window_expectancy": 2.9999999999996696,
+    "profitable_windows_gross_fraction": 0.7291666666666666,
+    "positive_expectancy_windows_fraction": 0.7291666666666666,
+    "windows_accuracy_ge_60": 0.6770833333333334,
+    "windows_accuracy_ge_70": 0.4583333333333333,
+    "gross_max_drawdown_pips": -90.00000000000342,
+    "mean_recorded_spread_pips": 0.6378313253012048,
+    "after_recorded_spread_mean_pips": 0.9701204819276644,
+    "after_recorded_spread_total_pips": 402.59999999998075,
+    "after_recorded_spread_maxdd_pips": -111.00000000000354,
+    "validation_q_counts": {
+      "0.9": 100
+    },
+    "cost_sensitivity": [
+      {
+        "cost_pips": 0,
+        "mean_pips": 1.6079518072288692,
+        "total_pips": 667.2999999999807,
+        "profitable_windows_fraction": 0.7291666666666666,
+        "maxdd_pips": -90.00000000000342
+      },
+      {
+        "cost_pips": 0.2,
+        "mean_pips": 1.4079518072288695,
+        "total_pips": 584.2999999999809,
+        "profitable_windows_fraction": 0.71875,
+        "maxdd_pips": -92.00000000000341
+      },
+      {
+        "cost_pips": 0.5,
+        "mean_pips": 1.1079518072288692,
+        "total_pips": 459.79999999998074,
+        "profitable_windows_fraction": 0.6979166666666666,
+        "maxdd_pips": -95.00000000000342
+      },
+      {
+        "cost_pips": 0.8,
+        "mean_pips": 0.807951807228869,
+        "total_pips": 335.2999999999806,
+        "profitable_windows_fraction": 0.6666666666666666,
+        "maxdd_pips": -98.00000000000341
+      },
+      {
+        "cost_pips": 1.0,
+        "mean_pips": 0.6079518072288692,
+        "total_pips": 252.2999999999807,
+        "profitable_windows_fraction": 0.6145833333333334,
+        "maxdd_pips": -112.00000000001103
+      },
+      {
+        "cost_pips": 1.2,
+        "mean_pips": 0.40795180722886926,
+        "total_pips": 169.29999999998074,
+        "profitable_windows_fraction": 0.59375,
+        "maxdd_pips": -134.2000000000112
+      },
+      {
+        "cost_pips": 1.5,
+        "mean_pips": 0.10795180722886918,
+        "total_pips": 44.79999999998071,
+        "profitable_windows_fraction": 0.53125,
+        "maxdd_pips": -193.200000000006
+      }
+    ],
+    "eras_20_windows": [
+      {
+        "windows": "1-20",
+        "start": "2009-12-01 00:00:00",
+        "end": "2013-04-01 00:00:00",
+        "signals": 69,
+        "accuracy": 0.6086956521739131,
+        "gross_mean_pips": 3.6231884057968635,
+        "gross_total_pips": 249.99999999998357,
+        "profitable_window_fraction": 0.6842105263157895
+      },
+      {
+        "windows": "21-40",
+        "start": "2013-04-01 00:00:00",
+        "end": "2016-08-01 00:00:00",
+        "signals": 68,
+        "accuracy": 0.6764705882352942,
+        "gross_mean_pips": 1.77941176470585,
+        "gross_total_pips": 120.9999999999978,
+        "profitable_window_fraction": 0.7647058823529411
+      },
+      {
+        "windows": "41-60",
+        "start": "2016-08-01 00:00:00",
+        "end": "2019-12-01 00:00:00",
+        "signals": 87,
+        "accuracy": 0.5977011494252874,
+        "gross_mean_pips": 0.5735632183907081,
+        "gross_total_pips": 49.89999999999161,
+        "profitable_window_fraction": 0.65
+      },
+      {
+        "windows": "61-80",
+        "start": "2019-12-01 00:00:00",
+        "end": "2023-04-01 00:00:00",
+        "signals": 88,
+        "accuracy": 0.7272727272727273,
+        "gross_mean_pips": 1.3477272727273593,
+        "gross_total_pips": 118.60000000000761,
+        "profitable_window_fraction": 0.75
+      },
+      {
+        "windows": "81-100",
+        "start": "2023-04-01 00:00:00",
+        "end": "2026-08-01 00:00:00",
+        "signals": 103,
+        "accuracy": 0.7864077669902912,
+        "gross_mean_pips": 1.2407766990291274,
+        "gross_total_pips": 127.80000000000011,
+        "profitable_window_fraction": 0.8
+      }
+    ],
+    "worst_10": [
+      {
+        "window_id": 40,
+        "window_start": "2016-06-01 00:00:00",
+        "signals": 5,
+        "selected_accuracy": 0.2,
+        "gross_mean_pips": -10.199999999999765,
+        "gross_sum_pips": -50.99999999999882,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 4,
+        "window_start": "2010-06-01 00:00:00",
+        "signals": 6,
+        "selected_accuracy": 0.1666666666666666,
+        "gross_mean_pips": -8.000000000000231,
+        "gross_sum_pips": -48.000000000001386,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 83,
+        "window_start": "2023-08-01 00:00:00",
+        "signals": 5,
+        "selected_accuracy": 0.6,
+        "gross_mean_pips": -5.7400000000003,
+        "gross_sum_pips": -28.7000000000015,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 59,
+        "window_start": "2019-08-01 00:00:00",
+        "signals": 5,
+        "selected_accuracy": 0.2,
+        "gross_mean_pips": -4.1399999999995885,
+        "gross_sum_pips": -20.699999999997942,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 5,
+        "window_start": "2010-08-01 00:00:00",
+        "signals": 1,
+        "selected_accuracy": 0.0,
+        "gross_mean_pips": -17.000000000000348,
+        "gross_sum_pips": -17.000000000000348,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 29,
+        "window_start": "2014-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -7.000000000000339,
+        "gross_sum_pips": -14.00000000000068,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 17,
+        "window_start": "2012-08-01 00:00:00",
+        "signals": 8,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -1.50000000000039,
+        "gross_sum_pips": -12.00000000000312,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 56,
+        "window_start": "2019-02-01 00:00:00",
+        "signals": 3,
+        "selected_accuracy": 0.6666666666666666,
+        "gross_mean_pips": -3.3333333333337065,
+        "gross_sum_pips": -10.00000000000112,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 43,
+        "window_start": "2016-12-01 00:00:00",
+        "signals": 4,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -2.3250000000013538,
+        "gross_sum_pips": -9.300000000005417,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 53,
+        "window_start": "2018-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": -3.3500000000008523,
+        "gross_sum_pips": -6.700000000001705,
+        "validation_quantile": 0.9
+      }
+    ],
+    "best_10": [
+      {
+        "window_id": 7,
+        "window_start": "2010-12-01 00:00:00",
+        "signals": 4,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 19.999999999999467,
+        "gross_sum_pips": 79.99999999999787,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 8,
+        "window_start": "2011-02-01 00:00:00",
+        "signals": 3,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 19.66666666666598,
+        "gross_sum_pips": 58.99999999999794,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 10,
+        "window_start": "2011-06-01 00:00:00",
+        "signals": 7,
+        "selected_accuracy": 0.5714285714285714,
+        "gross_mean_pips": 7.857142857142942,
+        "gross_sum_pips": 55.0000000000006,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 38,
+        "window_start": "2016-02-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 19.50000000000007,
+        "gross_sum_pips": 39.00000000000014,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 6,
+        "window_start": "2010-10-01 00:00:00",
+        "signals": 5,
+        "selected_accuracy": 0.6,
+        "gross_mean_pips": 7.600000000000051,
+        "gross_sum_pips": 38.000000000000256,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 35,
+        "window_start": "2015-08-01 00:00:00",
+        "signals": 7,
+        "selected_accuracy": 0.7142857142857143,
+        "gross_mean_pips": 5.000000000000084,
+        "gross_sum_pips": 35.00000000000058,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 93,
+        "window_start": "2025-04-01 00:00:00",
+        "signals": 3,
+        "selected_accuracy": 1.0,
+        "gross_mean_pips": 8.133333333334066,
+        "gross_sum_pips": 24.4000000000022,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 11,
+        "window_start": "2011-08-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": 11.999999999999789,
+        "gross_sum_pips": 23.999999999999577,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 48,
+        "window_start": "2017-10-01 00:00:00",
+        "signals": 3,
+        "selected_accuracy": 0.6666666666666666,
+        "gross_mean_pips": 7.233333333334091,
+        "gross_sum_pips": 21.700000000002277,
+        "validation_quantile": 0.9
+      },
+      {
+        "window_id": 14,
+        "window_start": "2012-02-01 00:00:00",
+        "signals": 2,
+        "selected_accuracy": 0.5,
+        "gross_mean_pips": 10.499999999999954,
+        "gross_sum_pips": 20.999999999999908,
+        "validation_quantile": 0.9
+      }
+    ],
+    "first80": {
+      "signals": 312,
+      "accuracy": 0.6538461538461539,
+      "gross_mean_pips": 1.7291666666666043,
+      "gross_total_pips": 539.4999999999806
+    },
+    "last20": {
+      "signals": 103,
+      "accuracy": 0.7864077669902912,
+      "gross_mean_pips": 1.2407766990291274,
+      "gross_total_pips": 127.80000000000011
+    },
+    "window_block_bootstrap_20000": {
+      "accuracy_95ci": [
+        0.6374407582938388,
+        0.7338501291989664
+      ],
+      "gross_mean_95ci": [
+        0.8261626871866333,
+        2.427784058554868
+      ],
+      "net_mean_cost1_95ci": [
+        -0.17383731281336673,
+        1.427784058554868
+      ],
+      "p_gross_mean_le_0": 0.00015,
+      "p_net_cost1_mean_le_0": 0.064
+    }
+  }
+}

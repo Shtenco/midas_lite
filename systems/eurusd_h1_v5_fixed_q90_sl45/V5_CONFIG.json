@@ -1,0 +1,45 @@
+{
+  "system": "MIDAS EURUSD H1 V5 Risk-Controlled Specialist",
+  "version": "5.0.0-fixed-q90-sl45",
+  "symbol": "EURUSD",
+  "timeframe": "H1",
+  "target_hour_broker_time": 23,
+  "transition": "23:00 -> 00:00 strict +1h only",
+  "direction_threshold": 0.5,
+  "confidence_gate": {
+    "type": "validation_confidence_quantile",
+    "quantile": 0.90,
+    "adaptive_quantile_selection": false
+  },
+  "risk": {
+    "hard_stop_loss_pips": 4.5,
+    "take_profit_pips": null,
+    "trailing_stop": false,
+    "averaging": false,
+    "martingale": false,
+    "exit_if_not_stopped": "next H1 close"
+  },
+  "model": {
+    "family": "HistGradientBoostingClassifier",
+    "learning_rate": 0.05,
+    "max_iter": 150,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 100,
+    "l2_regularization": 3.0,
+    "random_state": 42
+  },
+  "frozen_research": {
+    "rolling_windows": 100,
+    "window_months": 2,
+    "fixed_q90_oos_signals": 415,
+    "direction_accuracy": 0.6867469879518072,
+    "sl45_gross_mean_pips": 1.6578313253011874,
+    "sl45_gross_total_pips": 688.0,
+    "sl45_win_rate": 0.6313253012048192,
+    "sl45_profit_factor": 2.4719726144629393,
+    "sl45_max_drawdown_pips": -30.9,
+    "sl45_last30_windows_gross_mean_pips": 1.4100000000000552,
+    "sl45_last30_windows_max_drawdown_pips": -11.2
+  },
+  "canonical_drive_folder": "https://drive.google.com/drive/folders/14F65_6drsAtOoRWVAHxgRNRDUMgT_5_4"
+}
