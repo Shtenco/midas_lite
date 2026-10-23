@@ -1,3 +1,38 @@
+<div align="center">
+
+<img src="assets/readme/hero.svg" width="100%" alt="MIDAS LITE / LEGACY AI project vector identity"/>
+
+**MT5/Ollama strategy and frozen EURUSD H1 research artifacts**
+
+[Overview](#engineering-overview) · [Architecture](#architecture-and-data-flow) · [Evidence](#validation-boundaries) · [Original technical dossier](#original-technical-dossier)
+
+</div>
+
+## Engineering overview
+
+MT5/Ollama strategy and frozen EURUSD H1 research artifacts. Principal implementation directories and scripts: `agi_trader_final_v1.py; Shtenco_AI_V16_PROFIT_ROTATION333.py; systems/eurusd_h1_v5_fixed_q90_sl45/`. The repository includes both implemented research artifacts and separately planned capabilities.
+
+## Architecture and data flow
+
+```mermaid
+flowchart LR
+ I[Source datasets and configuration] --> R[Research modules]
+ R --> O[Outputs, evaluations and artifacts]
+ O --> V[Independent validation required]
+```
+
+This is an explanatory diagram, not a claim that every conceptual integration is deployed.
+
+## Validation boundaries
+
+> Model scores and profitability claims need matched independent testing; synthetic training results are not market results.
+
+Source availability, internal benchmarks and design goals must be distinguished from independently reproduced metrics and production readiness.
+
+## Original technical dossier
+
+---
+
 # 🧠 MIDAS Lite — verified legacy AI-trading dossier
 
 > **Статус:** 🕰️ LEGACY / 🔬 R&D.
