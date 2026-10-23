@@ -33,14 +33,14 @@ Source availability, internal benchmarks and design goals must be distinguished 
 
 ---
 
-# 🧠 MIDAS Lite — verified legacy AI-trading dossier
+#  MIDAS Lite — verified legacy AI-trading dossier
 
-> **Статус:** 🕰️ LEGACY / 🔬 R&D.
+> **Статус:**  LEGACY /  R&D.
 > **Проверено по фактическому Python source:** 29.09.2026.
 > **Состав:** два крупных MT5/Ollama trading prototypes + system artifacts.
 > **Никакая доходность не считается доказанной из названий/промптов внутри кода.**
 
-## 1. 🎯 Задача
+## 1.  Задача
 
 `midas_lite` содержит legacy AI-trading experiments, объединяющие:
 
@@ -55,7 +55,7 @@ Source availability, internal benchmarks and design goals must be distinguished 
 
 Это исследовательский предшественник более формального MIDAS stack.
 
-## 2. 📦 Фактический repository
+## 2.  Фактический repository
 
 ```text
 midas_lite/
@@ -69,7 +69,7 @@ midas_lite/
 
 Основные Python files крупные (~39 KB и ~69 KB).
 
-## 3. 🤖 V16 Profit Rotation prototype
+## 3.  V16 Profit Rotation prototype
 
 `Shtenco_AI_V16_PROFIT_ROTATION333.py` declares:
 
@@ -92,7 +92,7 @@ MAX_POSITION_SIZE = 5.00
 
 These are aggressive research defaults and must not be interpreted as production risk policy.
 
-## 4. 🧠 Memory database
+## 4.  Memory database
 
 SQLite schema stores:
 
@@ -122,7 +122,7 @@ SQLite schema stores:
 
 This is an actual persistence design, not merely prompt text.
 
-## 5. 🧮 Market hash
+## 5.  Market hash
 
 Current market hash compresses H1 state into:
 
@@ -138,7 +138,7 @@ This is a **coarse categorical key**, not a cryptographically meaningful represe
 
 Collision/aliasing is expected at semantic level because many distinct markets map to the same 3-category tuple.
 
-## 6. 📊 Technical features
+## 6.  Technical features
 
 Source implements/manual-calculates:
 
@@ -153,7 +153,7 @@ It also computes equity and floating PnL from simplified pip/lot arithmetic.
 
 Those calculations require broker-contract parity before real PnL equivalence can be claimed.
 
-## 7. ⚖️ Kelly-like sizing helper
+## 7.  Kelly-like sizing helper
 
 `calculate_kelly_leverage()` estimates from observed trade history:
 
@@ -171,7 +171,7 @@ in-sample historical Kelly estimate != safe live leverage
 
 Small sample instability and regime changes need dedicated controls.
 
-## 8. 🤖 AGI Trader V1
+## 8.  AGI Trader V1
 
 `agi_trader_final_v1.py` declares five modes in its header:
 
@@ -192,7 +192,7 @@ Defaults include:
 - live lot 2.00;
 - prediction horizon 96 M15 bars = 24h.
 
-## 9. 📐 Feature pipeline in AGI Trader
+## 9.  Feature pipeline in AGI Trader
 
 `calculate_features()` computes:
 
@@ -206,7 +206,7 @@ Defaults include:
 
 Rows with NaN from rolling warm-up are dropped.
 
-## 10. 🧪 Supervised dataset generation
+## 10.  Supervised dataset generation
 
 Real MT5 dataset generator:
 
@@ -221,7 +221,7 @@ This is acceptable as a supervised-label construction technique **only if these 
 
 The generated response literally includes the future realized direction/price, so train/test isolation is critical.
 
-## 11. 🚨 Synthetic fallback caveat
+## 11.  Synthetic fallback caveat
 
 If MT5 unavailable, source can generate synthetic labeled examples.
 
@@ -235,7 +235,7 @@ Therefore:
 synthetic dataset performance != market performance
 ```
 
-## 12. ⚠️ Potential dataset/evaluation hazards
+## 12.  Potential dataset/evaluation hazards
 
 - class balancing changes natural base rates;
 - oversampling duplicates minority examples;
@@ -245,7 +245,7 @@ synthetic dataset performance != market performance
 - broker history can differ;
 - no dataset manifest/hash visible at root.
 
-## 13. 🏗️ Architecture
+## 13.  Architecture
 
 ```mermaid
 flowchart LR
@@ -259,7 +259,7 @@ flowchart LR
     BT --> HIST[Trade memory]
 ```
 
-## 14. 🛡️ Authority / safety boundaries
+## 14.  Authority / safety boundaries
 
 ```text
 LLM confidence != calibrated probability
@@ -273,7 +273,7 @@ Kelly estimate != risk authorization
 
 Modern SYNERGY should put deterministic RiskGuard/TradeMux gates after any legacy AI suggestion.
 
-## 15. 🧪 Required validation before reuse
+## 15.  Required validation before reuse
 
 1. freeze exact data;
 2. causal timestamp split;
@@ -288,7 +288,7 @@ Modern SYNERGY should put deterministic RiskGuard/TradeMux gates after any legac
 11. remove future data from any inference-time prompt;
 12. independent QuantLab gate.
 
-## 16. 💸 Live-execution risks
+## 16.  Live-execution risks
 
 Any live mode requires:
 
@@ -304,7 +304,7 @@ Any live mode requires:
 
 Legacy code should not be deployed before these are independently verified.
 
-## 17. 🛠️ Reproducibility
+## 17.  Reproducibility
 
 Current source depends on:
 
@@ -315,7 +315,7 @@ Current source depends on:
 
 For scientific replay, create a frozen dataset and environment manifest instead of relying on “last 6 months”.
 
-## 18. 🗺️ Repository map
+## 18.  Repository map
 
 | Path | Role |
 |---|---|
@@ -324,7 +324,7 @@ For scientific replay, create a frozen dataset and environment manifest instead 
 | `systems/` | saved/derived system artifacts |
 | README | verified dossier |
 
-## 19. 🔗 Место в SYNERGY
+## 19.  Место в SYNERGY
 
 Legacy research should feed:
 
@@ -338,21 +338,21 @@ candidate idea
 
 It should not bypass modern deterministic gates.
 
-## 20. 📊 Evidence maturity
+## 20.  Evidence maturity
 
 | Layer | Status |
 |---|---|
-| substantial legacy code | ✅ |
-| MT5 integration | ✅ source |
-| Ollama integration | ✅ source |
-| SQLite memory | ✅ |
-| synthetic fallback | ✅ but not evidence |
+| substantial legacy code |  |
+| MT5 integration |  source |
+| Ollama integration |  source |
+| SQLite memory |  |
+| synthetic fallback |  but not evidence |
 | strict frozen OOS | not established here |
 | transaction-cost parity | incomplete |
-| calibrated LLM probability | ❌ |
-| production safety | ❌ |
+| calibrated LLM probability |  |
+| production safety |  |
 
-## 21. 🚀 Roadmap
+## 21.  Roadmap
 
 - freeze representative dataset;
 - audit train/test leakage;
@@ -364,7 +364,7 @@ It should not bypass modern deterministic gates.
 - add RiskGuard/TradeMux integration;
 - archive legacy source unchanged after distillation.
 
-## 22. 🛑 Что project НЕ утверждает
+## 22.  Что project НЕ утверждает
 
 - that “AGI” labels mean general intelligence;
 - that local LLM reasoning creates alpha;
@@ -375,4 +375,4 @@ It should not bypass modern deterministic gates.
 
 ---
 
-[🧭 SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system) · [📚 Atlas](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
+[ SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system) · [ Atlas](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
